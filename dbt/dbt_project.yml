@@ -1,0 +1,32 @@
+name: chicago_311
+version: "1.0.0"
+config-version: 2
+
+profile: chicago_311
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Analysis window. Anything created outside this is a data defect, not data.
+  window_start: "2023-01-01"
+  window_end: "2025-01-01"
+  # Requests still open after this many days are treated as administrative
+  # backlog rather than live work. See docs/DATA_QUALITY.md defect 6.
+  stale_open_days: 365
+
+models:
+  chicago_311:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: table
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts

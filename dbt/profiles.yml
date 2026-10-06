@@ -1,0 +1,12 @@
+# Relative path on purpose, so this works on a fresh clone with no edits.
+# dbt is always invoked from the dbt/ directory (see run.sh), so ../data/ here
+# resolves to <repo>/data/chicago311.duckdb.
+chicago_311:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/chicago311.duckdb
+      threads: 4
+      extensions:
+        - httpfs

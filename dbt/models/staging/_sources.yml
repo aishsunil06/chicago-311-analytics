@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: raw
+    description: >
+      Landing zone written by scripts/load_raw.py from the CSV pages that
+      scripts/extract.py pulls off the Socrata API. Every column is VARCHAR on
+      purpose so that bad values survive to the staging layer where the casts
+      are explicit and tested.
+    schema: raw
+    tables:
+      - name: service_requests
+        description: >
+          One row per 311 service request page-row as the City publishes it,
+          restricted to nine field-operations request types created between
+          2023-01-01 and 2024-12-31. Not deduplicated and not type-checked.
+        columns:
+          - name: sr_number
+            description: City-assigned request id, for example SR23-00412345.
+            tests:
+              - not_null
+          - name: sr_type
+            description: Long service-request type name.
+            tests:
+              - not_null
+          - name: created_date
+            description: When the request was opened, as a raw string.
+            tests:
+              - not_null

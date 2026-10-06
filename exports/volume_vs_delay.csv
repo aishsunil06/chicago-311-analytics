@@ -1,0 +1,11 @@
+Service Type,N Wards,Correlation Ward Volume vs Delay,N Ward Months,Correlation Monthly Load vs Delay,Median Days to Close,Volume Verdict
+ALL SERVICES,50,-0.203,1200,0.2331,2.5237,Busier wards are faster
+Abandoned Vehicle Complaint,50,-0.3139,1180,-0.0808,9.9284,Busier wards are faster
+Dead Animal Pick-Up Request,50,-0.3705,1019,0.2395,1.2472,Busier wards are faster
+Fly Dumping Complaint,48,0.625,860,0.1351,2.9006,Volume explains a lot
+Graffiti Removal Request,50,-0.2238,1164,-0.175,0.7909,Busier wards are faster
+Pothole in Street Complaint,50,0.1995,1193,-0.0988,8.5699,Volume explains nothing
+Rodent Baiting/Rat Complaint,50,0.3045,1192,0.5288,2.9835,Volume explains some
+Sanitation Code Violation,50,0.2587,1034,0.1221,2.7396,Volume explains some
+Street Light Out Complaint,50,-0.0877,1194,-0.1034,2.7094,Volume explains nothing
+Tree Debris Clean-Up Request,49,0.2638,913,0.0522,3.0952,Volume explains some

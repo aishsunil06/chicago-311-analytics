@@ -1,0 +1,11 @@
+Defect ID,Defect,Detection Rule,Handling,Affected Rows,Total Rows,Affected Share
+1,Duplicate requests,is_flagged_duplicate,"Excluded from no mart. Kept, because a resident reporting the same pothole twice is still a report. Flagged so any count can be taken with or without them.",54545,690427,0.079
+10,Dangling parent request id,parent_sr_number is not null and not exists (select 1 from staged p where p.sr_number = staged.parent_sr_number),"The surviving request this one was merged into is not in the extract, because the extract keeps only nine service types and a parent can be any type. An artifact of the extract filter, not a City defect. No mart joins on parent_sr_number.",2822,690427,0.0041
+2,Closed in under one minute,days_to_close_raw < 1.0/1440 and days_to_close_raw is not null,"Not a real closure. Surfaced as share_closed_under_1min in two marts rather than deleted, because deleting it would overstate how fast the remaining work is.",75768,690427,0.1097
+3,Ward missing or out of range,ward is null,"Nulled by the clean_ward macro. Row kept so citywide totals stay correct, excluded from every ward-level mart.",1398,690427,0.002
+4,Closed before created,closed_at < created_at,Would be impossible. None found in this slice. days_to_close refuses to populate if it ever appears.,0,690427,0.0
+5,Closed after last modified,closed_at > last_modified_at,"Fails a naive ordering test. Every instance is exactly one second, so it is a clock artifact. Test carries a one second tolerance, see tests/assert_closed_not_after_last_modified.sql.",7886,690427,0.0114
+6,Open longer than a year,is_stale_open,Backlog rather than live work. Counted separately as requests_stale_open.,404,690427,0.0006
+7,Completed with no closed timestamp,is_closed_without_timestamp,Would make the request unmeasurable. None found in this slice.,0,690427,0.0
+8,No geocode,has_no_geocode,"Blocks map views only. No effect on the ward analysis, which uses the ward field.",728,690427,0.0011
+9,Missing ZIP code,zip_code is null,Known gap. The City populates ZIP inconsistently by intake channel. Not used by any mart.,249501,690427,0.3614

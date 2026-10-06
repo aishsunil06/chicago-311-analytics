@@ -1,0 +1,357 @@
+version: 2
+
+models:
+  - name: mart_ward_service_performance
+    description: >
+      One row per ward x service type. Volume next to wait time, which is the
+      pairing the business question needs. Drives dashboard views 1 and 2.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [ward, service_type]
+    columns:
+      - name: ward
+        description: Ward number, 1-50.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_wards')
+                field: ward
+      - name: ward_name
+        description: Display label, for example "Ward 36".
+        tests:
+          - not_null
+      - name: city_side
+        description: North, South or West.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["North", "South", "West"]
+      - name: service_type
+        description: Service request type.
+        tests:
+          - not_null
+      - name: department
+        description: Owning department, acronym prefix stripped.
+        tests:
+          - not_null
+      - name: requests_total
+        description: All requests of this type in this ward over the two-year window.
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                inclusive: true
+      - name: requests_measurable
+        description: Subset with a usable closure duration. Denominator for every rate on this row.
+        tests:
+          - not_null
+      - name: requests_open
+        description: Count still Open at the end of the window.
+        tests:
+          - not_null
+      - name: requests_canceled
+        description: Count the City canceled rather than completed.
+        tests:
+          - not_null
+      - name: requests_duplicate
+        description: Count the City flagged as duplicates of another request.
+        tests:
+          - not_null
+      - name: median_days_to_close
+        description: Median days from open to close. The headline wait-time measure.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: true
+      - name: mean_days_to_close
+        description: Mean days to close. Reported alongside the median because the gap between them is the tail.
+      - name: p90_days_to_close
+        description: 90th percentile wait. What the unlucky tenth of residents experience.
+      - name: share_closed_within_7d
+        description: Fraction of measurable requests closed inside a week, 0 to 1.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+                inclusive: true
+      - name: share_closed_under_1min
+        description: >
+          Fraction closed in under 60 seconds. A data-quality signal, not a
+          performance one. Graffiti runs high here, see DATA_QUALITY defect 2.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+                inclusive: true
+      - name: slowest_rank_in_service
+        description: 1 means this ward is the slowest in the city for this service type.
+        tests:
+          - not_null
+      - name: volume_rank_in_service
+        description: 1 means this ward files the most of this service type.
+        tests:
+          - not_null
+      - name: median_vs_city_ratio
+        description: This ward's median divided by the typical ward median for the same service. Above 1 is slower than typical.
+
+  - name: mart_service_type_summary
+    description: >
+      Citywide performance per service type with the ward inequity measures
+      attached. The service-to-service range in median_days_to_close against
+      the within-service ward_inequity_ratio is what settles whether the wait
+      is a ward problem or a service problem.
+    columns:
+      - name: service_type
+        description: Service request type.
+        tests:
+          - not_null
+          - unique
+      - name: department
+        description: Owning department.
+        tests:
+          - not_null
+      - name: requests_total
+        description: Citywide volume over the window, including requests with no ward.
+        tests:
+          - not_null
+      - name: requests_measurable
+        description: Citywide count with a usable closure duration.
+        tests:
+          - not_null
+      - name: requests_open
+        description: Still Open at the end of the window.
+        tests:
+          - not_null
+      - name: requests_stale_open
+        description: Open for more than a year. Backlog.
+        tests:
+          - not_null
+      - name: closure_rate
+        description: requests_measurable over requests_total, 0 to 1.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+                inclusive: true
+      - name: median_days_to_close
+        description: Citywide median wait for this service type.
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: true
+      - name: mean_days_to_close
+        description: Citywide mean wait.
+      - name: p90_days_to_close
+        description: Citywide 90th percentile wait.
+      - name: share_closed_under_1min
+        description: Fraction of closures recorded in under a minute.
+      - name: wards_reported
+        description: Wards with at least 200 measurable requests of this type. Wards below the floor are excluded from the spread measures.
+        tests:
+          - not_null
+      - name: ward_p10_median_days
+        description: 10th percentile of the ward medians. A fast ward for this service.
+      - name: ward_p90_median_days
+        description: 90th percentile of the ward medians. A slow ward for this service.
+      - name: ward_fastest_median_days
+        description: Lowest ward median for this service.
+      - name: ward_slowest_median_days
+        description: Highest ward median for this service.
+      - name: ward_inequity_ratio
+        description: >
+          ward_p90_median_days over ward_p10_median_days. 1.4 means wards are
+          close to each other, 24 means a resident's ward matters enormously
+          for this service. p90/p10 rather than max/min so one small ward
+          cannot drive the number.
+      - name: corr_volume_vs_delay
+        description: >
+          Pearson correlation across wards between request volume and median
+          wait. Positive is the queueing story. This column is the volume
+          hypothesis, per service type.
+      - name: slowest_ward
+        description: Ward with the highest median wait for this service.
+      - name: slowest_ward_median_days
+        description: That ward's median wait.
+      - name: fastest_ward
+        description: Ward with the lowest median wait for this service.
+      - name: fastest_ward_median_days
+        description: That ward's median wait.
+
+  - name: mart_volume_vs_delay
+    description: >
+      The volume hypothesis as a table. Two correlations per service type: one
+      across wards, one within a ward across its own months. Includes an
+      'ALL SERVICES' row for the citywide figure.
+    columns:
+      - name: service_type
+        description: Service request type, or the literal 'ALL SERVICES' for the citywide row.
+        tests:
+          - not_null
+          - unique
+      - name: n_wards
+        description: Wards contributing to the across-ward correlation.
+        tests:
+          - not_null
+      - name: corr_ward_volume_vs_delay
+        description: >
+          Across wards, correlation between total volume and median wait.
+          Range -1 to 1.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -1
+                max_value: 1
+                inclusive: true
+      - name: n_ward_months
+        description: Ward-month observations behind the within-ward correlation.
+        tests:
+          - not_null
+      - name: corr_monthly_load_vs_delay
+        description: >
+          Within a ward, correlation between how heavy a month was relative to
+          that ward's own average and the median wait that month. This is the
+          cleaner test of congestion, because the ward is its own control.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -1
+                max_value: 1
+                inclusive: true
+      - name: median_days_to_close
+        description: Median of the ward-month medians, for context next to the correlations.
+      - name: volume_verdict
+        description: Plain-language bucketing of corr_ward_volume_vs_delay, so the dashboard and the CSV export agree.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Volume explains a lot
+                  - Volume explains some
+                  - Volume explains nothing
+                  - Busier wards are faster
+                  - Not enough data
+
+  - name: mart_monthly_trend
+    description: >
+      Service type by month, with year-over-year comparison. Carries the
+      seasonality result, which is where the pothole wait actually comes from.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [created_month, service_type]
+    columns:
+      - name: created_month
+        description: First of the month the requests were opened in.
+        tests:
+          - not_null
+      - name: created_year
+        description: 2023 or 2024.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [2023, 2024]
+                quote: false
+      - name: month_of_year
+        description: 1-12, so the two years can be overlaid on one axis.
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 12
+                inclusive: true
+      - name: service_type
+        description: Service request type.
+        tests:
+          - not_null
+      - name: department
+        description: Owning department.
+        tests:
+          - not_null
+      - name: requests_opened
+        description: Requests of this type opened citywide that month.
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                inclusive: true
+      - name: requests_measurable
+        description: Of those, how many have a usable closure duration.
+        tests:
+          - not_null
+      - name: requests_still_open
+        description: Of those, how many are still Open.
+        tests:
+          - not_null
+      - name: median_days_to_close
+        description: Median wait for requests opened that month.
+      - name: p90_days_to_close
+        description: 90th percentile wait for requests opened that month.
+      - name: share_closed_within_7d
+        description: Fraction closed inside a week, 0 to 1.
+      - name: median_days_to_close_ly
+        description: The same month one year earlier. NULL for all of 2023.
+      - name: median_days_change_yoy
+        description: median_days_to_close minus median_days_to_close_ly. Positive means the wait got worse.
+      - name: volume_index
+        description: That month's volume over the service type's average month. 1.0 is typical.
+        tests:
+          - not_null
+
+  - name: mart_data_quality
+    description: >
+      One row per documented data defect with its detection rule, its row
+      count, and how the pipeline handles it. Generated from the same list that
+      docs/DATA_QUALITY.md is written from, so the published counts and the
+      pipeline cannot disagree.
+    columns:
+      - name: defect_id
+        description: Matches the numbered section in docs/DATA_QUALITY.md.
+        tests:
+          - not_null
+          - unique
+      - name: defect
+        description: Short name of the defect.
+        tests:
+          - not_null
+      - name: detection_rule
+        description: The SQL predicate that identifies affected rows, as text.
+        tests:
+          - not_null
+      - name: handling
+        description: What the pipeline does about it and why.
+        tests:
+          - not_null
+      - name: affected_rows
+        description: Rows in stg_service_requests matching the detection rule.
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: true
+      - name: total_rows
+        description: Rows in stg_service_requests, the denominator.
+        tests:
+          - not_null
+      - name: affected_share
+        description: affected_rows over total_rows, 0 to 1.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+                inclusive: true

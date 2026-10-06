@@ -1,0 +1,121 @@
+version: 2
+
+models:
+  - name: stg_service_requests
+    description: >
+      One row per raw 311 request record, renamed and typed. Lossless by
+      design: no rows are dropped and no values are repaired here, so this
+      model is the right place to measure data quality from. Duplicate
+      sr_numbers are still present at this stage.
+    columns:
+      - name: sr_number
+        description: City-assigned service request id. Not unique at this stage, see docs/DATA_QUALITY.md defect 1.
+        tests:
+          - not_null
+      - name: sr_type
+        description: Long service-request type name, for example "Pothole in Street Complaint".
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Graffiti Removal Request
+                  - Pothole in Street Complaint
+                  - Rodent Baiting/Rat Complaint
+                  - Abandoned Vehicle Complaint
+                  - Street Light Out Complaint
+                  - Tree Debris Clean-Up Request
+                  - Dead Animal Pick-Up Request
+                  - Sanitation Code Violation
+                  - Fly Dumping Complaint
+      - name: sr_short_code
+        description: Three or four character internal code for the request type, for example GRAF.
+        tests:
+          - not_null
+      - name: owner_department
+        description: >
+          Department that owns the work. Naming is inconsistent in the raw feed
+          (some entries are prefixed with an acronym, some are not), so the
+          marts use the normalised version from int_service_requests.
+      - name: status_raw
+        description: >
+          Lifecycle status exactly as published. Renamed with a _raw suffix
+          because it needs normalising: "Completed" and "Closed" mean the same
+          thing and both appear.
+        tests:
+          - not_null
+      - name: origin
+        description: Intake channel, for example Phone Call, Mobile Device, Internet.
+      - name: created_at
+        description: Timestamp the request was opened. Cast with try_cast so an unparseable value becomes NULL instead of failing the run.
+        tests:
+          - not_null
+      - name: last_modified_at
+        description: Timestamp of the last update of any kind to the record. Drives the incremental filter in int_service_requests.
+      - name: closed_at
+        description: Timestamp the request was closed. NULL for open requests, and also NULL for some records the City reports as completed.
+      - name: is_flagged_duplicate
+        description: City's own duplicate flag, parsed from the string 'true'/'false' the API returns.
+      - name: is_legacy_record
+        description: True for records migrated from the pre-2018 311 system.
+      - name: parent_sr_number
+        description: For a request the City merged into another, the id of the surviving request. NULL otherwise.
+      - name: ward_raw
+        description: Ward as published, kept as a string so blank and out-of-range values stay countable.
+      - name: ward
+
+        description: Ward coerced to an integer in 1-50 by the clean_ward macro, NULL when the raw value is blank or out of range.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 50
+                inclusive: true
+      - name: community_area
+        description: Community area number, 1-77. NULL when the City did not geocode the request.
+      - name: police_district
+        description: Police district the address falls in. Carried as a string because it is zero-padded.
+      - name: zip_code
+        description: Five digit ZIP of the service address.
+      - name: street_address
+        description: Service address. Some values contain embedded newlines in the source CSV.
+      - name: latitude
+        description: Latitude in WGS84. NULL for requests with no usable address.
+      - name: longitude
+        description: Longitude in WGS84. NULL for requests with no usable address.
+      - name: source_file
+        description: Raw CSV page the row was loaded from. Kept for lineage when a month needs re-pulling.
+
+  - name: stg_wards
+    description: Ward dimension built from the ward_reference seed. 50 rows, one per Chicago ward.
+    columns:
+      - name: ward
+        description: Ward number, 1-50.
+        tests:
+          - not_null
+          - unique
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 50
+                inclusive: true
+      - name: ward_name
+        description: Display label for the ward, used as an axis label in the dashboard.
+        tests:
+          - not_null
+      - name: city_side
+        description: Operational grouping of the ward into North, South or West.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["North", "South", "West"]
+
+seeds:
+  - name: ward_reference
+    description: Static list of Chicago's 50 wards with the side of the city each belongs to.
+    columns:
+      - name: ward
+        tests:
+          - not_null
+          - unique

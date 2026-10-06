@@ -1,0 +1,217 @@
+Created Month,Created Year,Month of Year,Service Type,Department,Requests Opened,Requests Measurable,Requests Still Open,Median Days to Close,P90 Days to Close,Share Closed within 7 Days,Median Days to Close Last Year,Median Days Change YoY,Volume Index
+2023-01-01,2023,1,Abandoned Vehicle Complaint,Streets and Sanitation,3679,3654,25.0,9.9557,25.1438,0.3845,,,0.93
+2023-02-01,2023,2,Abandoned Vehicle Complaint,Streets and Sanitation,3677,3673,4.0,9.6165,24.8574,0.4108,,,0.9295
+2023-03-01,2023,3,Abandoned Vehicle Complaint,Streets and Sanitation,4005,3996,9.0,8.0379,22.5135,0.4557,,,1.0124
+2023-04-01,2023,4,Abandoned Vehicle Complaint,Streets and Sanitation,3221,3215,6.0,6.7817,19.6226,0.5201,,,0.8142
+2023-05-01,2023,5,Abandoned Vehicle Complaint,Streets and Sanitation,3965,3956,9.0,7.6582,21.7394,0.4818,,,1.0023
+2023-06-01,2023,6,Abandoned Vehicle Complaint,Streets and Sanitation,3988,3980,8.0,10.6785,31.0839,0.3724,,,1.0081
+2023-07-01,2023,7,Abandoned Vehicle Complaint,Streets and Sanitation,3391,3384,7.0,7.7599,20.5208,0.4746,,,0.8572
+2023-08-01,2023,8,Abandoned Vehicle Complaint,Streets and Sanitation,4210,4185,25.0,8.7163,22.8939,0.4361,,,1.0642
+2023-09-01,2023,9,Abandoned Vehicle Complaint,Streets and Sanitation,3792,3779,13.0,6.7422,20.5044,0.5239,,,0.9586
+2023-10-01,2023,10,Abandoned Vehicle Complaint,Streets and Sanitation,3585,3567,18.0,6.9464,20.7429,0.5032,,,0.9062
+2023-11-01,2023,11,Abandoned Vehicle Complaint,Streets and Sanitation,3763,3745,18.0,9.7587,25.5988,0.4003,,,0.9512
+2023-12-01,2023,12,Abandoned Vehicle Complaint,Streets and Sanitation,3677,3670,7.0,13.0615,37.2063,0.2856,,,0.9295
+2024-01-01,2024,1,Abandoned Vehicle Complaint,Streets and Sanitation,4666,4199,8.0,14.0136,33.9411,0.2798,9.9557,4.0579,1.1795
+2024-02-01,2024,2,Abandoned Vehicle Complaint,Streets and Sanitation,4433,4422,11.0,15.1245,41.501,0.2818,9.6165,5.508,1.1206
+2024-03-01,2024,3,Abandoned Vehicle Complaint,Streets and Sanitation,4513,4494,19.0,15.6288,38.0437,0.2886,8.0379,7.5909,1.1408
+2024-04-01,2024,4,Abandoned Vehicle Complaint,Streets and Sanitation,4338,4305,33.0,11.6687,27.5176,0.3552,6.7817,4.887,1.0966
+2024-05-01,2024,5,Abandoned Vehicle Complaint,Streets and Sanitation,4641,4626,15.0,8.8479,25.0715,0.4351,7.6582,1.1897,1.1732
+2024-06-01,2024,6,Abandoned Vehicle Complaint,Streets and Sanitation,4060,4044,16.0,11.0271,27.7595,0.3492,10.6785,0.3486,1.0263
+2024-07-01,2024,7,Abandoned Vehicle Complaint,Streets and Sanitation,4149,4123,26.0,9.0607,24.5081,0.4172,7.7599,1.3008,1.0488
+2024-08-01,2024,8,Abandoned Vehicle Complaint,Streets and Sanitation,4252,4223,29.0,10.804,72.7001,0.3931,8.7163,2.0877,1.0749
+2024-09-01,2024,9,Abandoned Vehicle Complaint,Streets and Sanitation,4056,4041,14.0,9.5929,47.8271,0.4044,6.7422,2.8507,1.0253
+2024-10-01,2024,10,Abandoned Vehicle Complaint,Streets and Sanitation,3951,3924,27.0,9.5585,26.8275,0.4067,6.9464,2.6121,0.9988
+2024-11-01,2024,11,Abandoned Vehicle Complaint,Streets and Sanitation,3415,3383,32.0,10.0124,35.7239,0.4017,9.7587,0.2537,0.8633
+2024-12-01,2024,12,Abandoned Vehicle Complaint,Streets and Sanitation,3514,3497,17.0,11.0625,34.8934,0.3835,13.0615,-1.999,0.8883
+2023-01-01,2023,1,Dead Animal Pick-Up Request,Streets and Sanitation,726,726,0.0,0.9424,2.5864,1.0,,,0.5659
+2023-02-01,2023,2,Dead Animal Pick-Up Request,Streets and Sanitation,666,666,0.0,0.862,2.02,1.0,,,0.5191
+2023-03-01,2023,3,Dead Animal Pick-Up Request,Streets and Sanitation,848,848,0.0,0.9322,2.8762,1.0,,,0.661
+2023-04-01,2023,4,Dead Animal Pick-Up Request,Streets and Sanitation,1031,1031,0.0,1.0733,2.7043,1.0,,,0.8036
+2023-05-01,2023,5,Dead Animal Pick-Up Request,Streets and Sanitation,1459,1459,0.0,1.1758,2.9587,1.0,,,1.1372
+2023-06-01,2023,6,Dead Animal Pick-Up Request,Streets and Sanitation,1534,1534,0.0,1.6849,3.1596,1.0,,,1.1956
+2023-07-01,2023,7,Dead Animal Pick-Up Request,Streets and Sanitation,1357,1357,0.0,1.242,3.0149,1.0,,,1.0577
+2023-08-01,2023,8,Dead Animal Pick-Up Request,Streets and Sanitation,1687,1687,0.0,1.2637,3.0737,1.0,,,1.3149
+2023-09-01,2023,9,Dead Animal Pick-Up Request,Streets and Sanitation,1663,1663,0.0,1.847,3.8228,1.0,,,1.2962
+2023-10-01,2023,10,Dead Animal Pick-Up Request,Streets and Sanitation,1238,1238,0.0,1.1712,3.0546,1.0,,,0.9649
+2023-11-01,2023,11,Dead Animal Pick-Up Request,Streets and Sanitation,1066,1066,0.0,1.6453,3.5525,0.9962,,,0.8309
+2023-12-01,2023,12,Dead Animal Pick-Up Request,Streets and Sanitation,953,953,0.0,1.1495,3.1396,1.0,,,0.7428
+2024-01-01,2024,1,Dead Animal Pick-Up Request,Streets and Sanitation,741,741,0.0,1.0386,2.9438,1.0,0.9424,0.0962,0.5776
+2024-02-01,2024,2,Dead Animal Pick-Up Request,Streets and Sanitation,1322,1322,0.0,1.0975,3.0585,1.0,0.862,0.2355,1.0304
+2024-03-01,2024,3,Dead Animal Pick-Up Request,Streets and Sanitation,1081,1081,0.0,1.1369,2.9183,1.0,0.9322,0.2047,0.8426
+2024-04-01,2024,4,Dead Animal Pick-Up Request,Streets and Sanitation,1168,1168,0.0,1.1154,2.8873,1.0,1.0733,0.0421,0.9104
+2024-05-01,2024,5,Dead Animal Pick-Up Request,Streets and Sanitation,1635,1635,0.0,1.753,3.9187,0.9994,1.1758,0.5772,1.2744
+2024-06-01,2024,6,Dead Animal Pick-Up Request,Streets and Sanitation,1722,1722,0.0,1.8229,3.1781,0.9994,1.6849,0.138,1.3422
+2024-07-01,2024,7,Dead Animal Pick-Up Request,Streets and Sanitation,1679,1679,0.0,1.6576,3.1658,0.9988,1.242,0.4156,1.3087
+2024-08-01,2024,8,Dead Animal Pick-Up Request,Streets and Sanitation,1857,1857,0.0,1.6753,3.7972,0.9995,1.2637,0.4116,1.4474
+2024-09-01,2024,9,Dead Animal Pick-Up Request,Streets and Sanitation,1805,1805,0.0,2.0346,4.056,0.9922,1.847,0.1876,1.4069
+2024-10-01,2024,10,Dead Animal Pick-Up Request,Streets and Sanitation,1722,1722,0.0,1.7625,3.9465,0.9948,1.1712,0.5913,1.3422
+2024-11-01,2024,11,Dead Animal Pick-Up Request,Streets and Sanitation,1027,1027,0.0,1.2656,3.1637,0.999,1.6453,-0.3797,0.8005
+2024-12-01,2024,12,Dead Animal Pick-Up Request,Streets and Sanitation,805,805,0.0,1.1202,2.979,1.0,1.1495,-0.0294,0.6274
+2023-01-01,2023,1,Fly Dumping Complaint,Streets and Sanitation,768,767,1.0,3.0986,14.1249,0.7275,,,0.7567
+2023-02-01,2023,2,Fly Dumping Complaint,Streets and Sanitation,688,687,1.0,3.727,18.249,0.671,,,0.6779
+2023-03-01,2023,3,Fly Dumping Complaint,Streets and Sanitation,913,912,0.0,3.9282,37.8238,0.6513,,,0.8996
+2023-04-01,2023,4,Fly Dumping Complaint,Streets and Sanitation,985,981,2.0,8.9229,51.4718,0.473,,,0.9706
+2023-05-01,2023,5,Fly Dumping Complaint,Streets and Sanitation,1114,1112,0.0,6.9344,63.0643,0.5018,,,1.0977
+2023-06-01,2023,6,Fly Dumping Complaint,Streets and Sanitation,1134,1133,0.0,6.9961,50.7811,0.5004,,,1.1174
+2023-07-01,2023,7,Fly Dumping Complaint,Streets and Sanitation,1232,1231,1.0,4.2644,56.7188,0.6003,,,1.2139
+2023-08-01,2023,8,Fly Dumping Complaint,Streets and Sanitation,1344,1343,0.0,8.0132,64.8948,0.487,,,1.3243
+2023-09-01,2023,9,Fly Dumping Complaint,Streets and Sanitation,1199,1198,1.0,9.2524,45.9283,0.4499,,,1.1814
+2023-10-01,2023,10,Fly Dumping Complaint,Streets and Sanitation,969,965,1.0,4.9287,28.9451,0.5782,,,0.9548
+2023-11-01,2023,11,Fly Dumping Complaint,Streets and Sanitation,908,900,0.0,4.1835,22.0028,0.6178,,,0.8947
+2023-12-01,2023,12,Fly Dumping Complaint,Streets and Sanitation,796,796,0.0,3.7734,16.6421,0.701,,,0.7843
+2024-01-01,2024,1,Fly Dumping Complaint,Streets and Sanitation,637,634,1.0,2.6539,14.0366,0.7902,3.0986,-0.4448,0.6277
+2024-02-01,2024,2,Fly Dumping Complaint,Streets and Sanitation,879,878,1.0,4.0292,29.8943,0.6458,3.727,0.3022,0.8661
+2024-03-01,2024,3,Fly Dumping Complaint,Streets and Sanitation,946,941,3.0,3.9721,28.6701,0.6695,3.9282,0.0439,0.9321
+2024-04-01,2024,4,Fly Dumping Complaint,Streets and Sanitation,959,958,0.0,3.8532,48.6886,0.6232,8.9229,-5.0697,0.9449
+2024-05-01,2024,5,Fly Dumping Complaint,Streets and Sanitation,1008,1001,0.0,5.4233,46.2216,0.5644,6.9344,-1.5112,0.9932
+2024-06-01,2024,6,Fly Dumping Complaint,Streets and Sanitation,1197,1192,4.0,5.1158,62.9395,0.5663,6.9961,-1.8803,1.1795
+2024-07-01,2024,7,Fly Dumping Complaint,Streets and Sanitation,1360,1357,0.0,6.1818,54.9667,0.5181,4.2644,1.9174,1.3401
+2024-08-01,2024,8,Fly Dumping Complaint,Streets and Sanitation,1350,1350,0.0,5.8413,49.939,0.5304,8.0132,-2.1719,1.3302
+2024-09-01,2024,9,Fly Dumping Complaint,Streets and Sanitation,1284,1279,3.0,4.1985,40.1873,0.5927,9.2524,-5.0539,1.2652
+2024-10-01,2024,10,Fly Dumping Complaint,Streets and Sanitation,1108,1105,2.0,3.7848,28.5914,0.6724,4.9287,-1.1439,1.0918
+2024-11-01,2024,11,Fly Dumping Complaint,Streets and Sanitation,779,778,1.0,3.653,26.1202,0.6979,4.1835,-0.5305,0.7676
+2024-12-01,2024,12,Fly Dumping Complaint,Streets and Sanitation,800,799,0.0,3.033,37.7049,0.6733,3.7734,-0.7405,0.7883
+2023-01-01,2023,1,Graffiti Removal Request,Streets and Sanitation,6828,6820,0.0,0.8444,2.9239,0.9922,,,0.8848
+2023-02-01,2023,2,Graffiti Removal Request,Streets and Sanitation,6764,6759,0.0,0.82,2.7009,0.9942,,,0.8765
+2023-03-01,2023,3,Graffiti Removal Request,Streets and Sanitation,7473,7466,3.0,0.7713,2.956,0.9944,,,0.9684
+2023-04-01,2023,4,Graffiti Removal Request,Streets and Sanitation,7051,7042,3.0,0.8281,2.818,0.9878,,,0.9137
+2023-05-01,2023,5,Graffiti Removal Request,Streets and Sanitation,7265,7253,1.0,0.7513,2.8221,0.9908,,,0.9415
+2023-06-01,2023,6,Graffiti Removal Request,Streets and Sanitation,7066,7061,1.0,0.7213,2.9498,0.9919,,,0.9157
+2023-07-01,2023,7,Graffiti Removal Request,Streets and Sanitation,7078,7068,7.0,0.7296,2.7409,0.99,,,0.9172
+2023-08-01,2023,8,Graffiti Removal Request,Streets and Sanitation,8036,8031,1.0,0.5485,1.9963,0.9935,,,1.0414
+2023-09-01,2023,9,Graffiti Removal Request,Streets and Sanitation,7418,7407,8.0,0.7548,2.7813,0.9942,,,0.9613
+2023-10-01,2023,10,Graffiti Removal Request,Streets and Sanitation,7300,7288,2.0,0.7528,2.7795,0.9923,,,0.946
+2023-11-01,2023,11,Graffiti Removal Request,Streets and Sanitation,7404,7383,2.0,0.7727,2.9087,0.9907,,,0.9595
+2023-12-01,2023,12,Graffiti Removal Request,Streets and Sanitation,6152,6151,0.0,0.7622,2.8705,0.992,,,0.7972
+2024-01-01,2024,1,Graffiti Removal Request,Streets and Sanitation,6810,6806,1.0,0.7176,2.7316,0.9922,0.8444,-0.1267,0.8825
+2024-02-01,2024,2,Graffiti Removal Request,Streets and Sanitation,7375,7361,0.0,0.7454,2.6418,0.992,0.82,-0.0746,0.9557
+2024-03-01,2024,3,Graffiti Removal Request,Streets and Sanitation,7942,7936,1.0,0.8927,3.0671,0.986,0.7713,0.1214,1.0292
+2024-04-01,2024,4,Graffiti Removal Request,Streets and Sanitation,8538,8524,2.0,0.8326,2.8458,0.9843,0.8281,0.0045,1.1064
+2024-05-01,2024,5,Graffiti Removal Request,Streets and Sanitation,8182,8171,1.0,0.7989,3.0618,0.9869,0.7513,0.0476,1.0603
+2024-06-01,2024,6,Graffiti Removal Request,Streets and Sanitation,7888,7840,1.0,0.837,2.9655,0.986,0.7213,0.1156,1.0222
+2024-07-01,2024,7,Graffiti Removal Request,Streets and Sanitation,9245,9128,0.0,0.5812,2.5631,0.9913,0.7296,-0.1484,1.198
+2024-08-01,2024,8,Graffiti Removal Request,Streets and Sanitation,10230,10003,1.0,0.3908,2.7621,0.9917,0.5485,-0.1577,1.3257
+2024-09-01,2024,9,Graffiti Removal Request,Streets and Sanitation,8204,8057,30.0,0.7862,2.9009,0.9901,0.7548,0.0314,1.0631
+2024-10-01,2024,10,Graffiti Removal Request,Streets and Sanitation,9292,9093,56.0,0.5813,2.6123,0.9947,0.7528,-0.1714,1.2041
+2024-11-01,2024,11,Graffiti Removal Request,Streets and Sanitation,8181,7887,53.0,0.6825,2.8195,0.9971,0.7727,-0.0901,1.0602
+2024-12-01,2024,12,Graffiti Removal Request,Streets and Sanitation,7479,7235,41.0,0.6182,2.672,0.9961,0.7622,-0.1439,0.9692
+2023-01-01,2023,1,Pothole in Street Complaint,Department of Transportation,6642,6641,0.0,0.9864,9.9187,0.853,,,1.5892
+2023-02-01,2023,2,Pothole in Street Complaint,Department of Transportation,6973,6973,0.0,1.6983,13.1205,0.812,,,1.6684
+2023-03-01,2023,3,Pothole in Street Complaint,Department of Transportation,7926,7926,0.0,3.7503,18.993,0.7189,,,1.8964
+2023-04-01,2023,4,Pothole in Street Complaint,Department of Transportation,4520,4520,0.0,7.9369,82.6111,0.4743,,,1.0815
+2023-05-01,2023,5,Pothole in Street Complaint,Department of Transportation,3815,3811,3.0,20.9139,80.8641,0.2973,,,0.9128
+2023-06-01,2023,6,Pothole in Street Complaint,Department of Transportation,3207,3201,0.0,15.665,76.8824,0.3249,,,0.7673
+2023-07-01,2023,7,Pothole in Street Complaint,Department of Transportation,3252,3251,0.0,16.0266,69.6432,0.3387,,,0.7781
+2023-08-01,2023,8,Pothole in Street Complaint,Department of Transportation,3299,3298,1.0,11.003,63.9295,0.3951,,,0.7893
+2023-09-01,2023,9,Pothole in Street Complaint,Department of Transportation,2525,2523,2.0,13.0451,62.5693,0.3662,,,0.6041
+2023-10-01,2023,10,Pothole in Street Complaint,Department of Transportation,2185,2185,0.0,11.0437,41.6519,0.3904,,,0.5228
+2023-11-01,2023,11,Pothole in Street Complaint,Department of Transportation,1870,1869,0.0,6.1408,21.0133,0.5463,,,0.4474
+2023-12-01,2023,12,Pothole in Street Complaint,Department of Transportation,2852,2852,0.0,1.9669,11.1012,0.7879,,,0.6824
+2024-01-01,2024,1,Pothole in Street Complaint,Department of Transportation,6541,6477,1.0,2.6059,10.8993,0.805,0.9864,1.6195,1.565
+2024-02-01,2024,2,Pothole in Street Complaint,Department of Transportation,7757,7755,2.0,1.157,6.1477,0.9217,1.6983,-0.5412,1.8559
+2024-03-01,2024,3,Pothole in Street Complaint,Department of Transportation,5519,5519,0.0,3.7617,10.6646,0.7992,3.7503,0.0114,1.3205
+2024-04-01,2024,4,Pothole in Street Complaint,Department of Transportation,5775,5765,9.0,8.9664,168.1421,0.4451,7.9369,1.0295,1.3817
+2024-05-01,2024,5,Pothole in Street Complaint,Department of Transportation,5389,5360,23.0,62.9495,232.763,0.1681,20.9139,42.0356,1.2894
+2024-06-01,2024,6,Pothole in Street Complaint,Department of Transportation,4926,4917,9.0,55.7563,209.5627,0.1611,15.665,40.0913,1.1786
+2024-07-01,2024,7,Pothole in Street Complaint,Department of Transportation,4096,4087,6.0,49.0662,185.0048,0.1436,16.0266,33.0396,0.98
+2024-08-01,2024,8,Pothole in Street Complaint,Department of Transportation,2947,2941,5.0,46.0349,164.4655,0.2618,11.003,35.032,0.7051
+2024-09-01,2024,9,Pothole in Street Complaint,Department of Transportation,2563,2559,4.0,33.8297,135.6733,0.3083,13.0451,20.7845,0.6132
+2024-10-01,2024,10,Pothole in Street Complaint,Department of Transportation,2253,2248,5.0,35.0652,113.0189,0.2358,11.0437,24.0215,0.5391
+2024-11-01,2024,11,Pothole in Street Complaint,Department of Transportation,1950,1947,3.0,22.7232,84.2405,0.2712,6.1408,16.5824,0.4666
+2024-12-01,2024,12,Pothole in Street Complaint,Department of Transportation,1527,1526,1.0,18.6805,59.3276,0.2595,1.9669,16.7136,0.3654
+2023-01-01,2023,1,Rodent Baiting/Rat Complaint,Streets and Sanitation,2610,2610,0.0,1.608,3.8923,1.0,,,0.6637
+2023-02-01,2023,2,Rodent Baiting/Rat Complaint,Streets and Sanitation,2409,2409,0.0,1.1797,3.643,0.9929,,,0.6126
+2023-03-01,2023,3,Rodent Baiting/Rat Complaint,Streets and Sanitation,3285,3285,0.0,1.8759,4.1818,0.9994,,,0.8354
+2023-04-01,2023,4,Rodent Baiting/Rat Complaint,Streets and Sanitation,3486,3486,0.0,1.7123,3.7942,1.0,,,0.8865
+2023-05-01,2023,5,Rodent Baiting/Rat Complaint,Streets and Sanitation,4372,4372,0.0,2.0474,4.4956,1.0,,,1.1118
+2023-06-01,2023,6,Rodent Baiting/Rat Complaint,Streets and Sanitation,5017,5017,0.0,4.6989,8.8777,0.8485,,,1.2758
+2023-07-01,2023,7,Rodent Baiting/Rat Complaint,Streets and Sanitation,5416,5416,0.0,10.9118,14.6829,0.1381,,,1.3773
+2023-08-01,2023,8,Rodent Baiting/Rat Complaint,Streets and Sanitation,6073,6073,0.0,19.0342,22.8053,0.0751,,,1.5443
+2023-09-01,2023,9,Rodent Baiting/Rat Complaint,Streets and Sanitation,5323,5320,3.0,22.0167,25.9199,0.0549,,,1.3536
+2023-10-01,2023,10,Rodent Baiting/Rat Complaint,Streets and Sanitation,4623,4623,0.0,20.9065,24.8892,0.0543,,,1.1756
+2023-11-01,2023,11,Rodent Baiting/Rat Complaint,Streets and Sanitation,3379,3379,0.0,14.7787,18.912,0.1086,,,0.8593
+2023-12-01,2023,12,Rodent Baiting/Rat Complaint,Streets and Sanitation,2654,2654,0.0,3.5421,6.8753,0.9115,,,0.6749
+2024-01-01,2024,1,Rodent Baiting/Rat Complaint,Streets and Sanitation,2412,2412,0.0,1.839,4.0355,0.9954,1.608,0.2311,0.6134
+2024-02-01,2024,2,Rodent Baiting/Rat Complaint,Streets and Sanitation,2853,2853,0.0,1.1821,3.8403,1.0,1.1797,0.0024,0.7255
+2024-03-01,2024,3,Rodent Baiting/Rat Complaint,Streets and Sanitation,2657,2657,0.0,1.1704,3.5647,1.0,1.8759,-0.7056,0.6757
+2024-04-01,2024,4,Rodent Baiting/Rat Complaint,Streets and Sanitation,3539,3539,0.0,1.1415,3.1236,1.0,1.7123,-0.5708,0.8999
+2024-05-01,2024,5,Rodent Baiting/Rat Complaint,Streets and Sanitation,4347,4347,0.0,2.1598,5.1722,0.9655,2.0474,0.1124,1.1054
+2024-06-01,2024,6,Rodent Baiting/Rat Complaint,Streets and Sanitation,4812,4812,0.0,3.8677,6.865,0.9108,4.6989,-0.8312,1.2237
+2024-07-01,2024,7,Rodent Baiting/Rat Complaint,Streets and Sanitation,5573,5573,0.0,7.0308,9.1713,0.4868,10.9118,-3.8809,1.4172
+2024-08-01,2024,8,Rodent Baiting/Rat Complaint,Streets and Sanitation,4950,4950,0.0,8.5408,12.0433,0.2869,19.0342,-10.4934,1.2588
+2024-09-01,2024,9,Rodent Baiting/Rat Complaint,Streets and Sanitation,4728,4728,0.0,9.9559,13.0496,0.1874,22.0167,-12.0609,1.2023
+2024-10-01,2024,10,Rodent Baiting/Rat Complaint,Streets and Sanitation,4570,4570,0.0,9.7468,14.1873,0.2101,20.9065,-11.1596,1.1621
+2024-11-01,2024,11,Rodent Baiting/Rat Complaint,Streets and Sanitation,3047,3047,0.0,3.1055,6.0886,0.9573,14.7787,-11.6732,0.7748
+2024-12-01,2024,12,Rodent Baiting/Rat Complaint,Streets and Sanitation,2244,2244,0.0,1.1833,3.0841,1.0,3.5421,-2.3588,0.5706
+2023-01-01,2023,1,Sanitation Code Violation,Streets and Sanitation,887,883,2.0,2.0261,19.0331,0.7622,,,0.7969
+2023-02-01,2023,2,Sanitation Code Violation,Streets and Sanitation,789,787,2.0,2.8539,19.6376,0.7166,,,0.7089
+2023-03-01,2023,3,Sanitation Code Violation,Streets and Sanitation,991,988,0.0,3.1818,33.0239,0.6832,,,0.8904
+2023-04-01,2023,4,Sanitation Code Violation,Streets and Sanitation,950,946,0.0,4.5677,46.9006,0.5856,,,0.8535
+2023-05-01,2023,5,Sanitation Code Violation,Streets and Sanitation,1377,1373,1.0,4.5854,57.1368,0.5914,,,1.2372
+2023-06-01,2023,6,Sanitation Code Violation,Streets and Sanitation,1256,1255,1.0,4.6135,50.334,0.5976,,,1.1284
+2023-07-01,2023,7,Sanitation Code Violation,Streets and Sanitation,1405,1401,2.0,4.3585,56.6724,0.5939,,,1.2623
+2023-08-01,2023,8,Sanitation Code Violation,Streets and Sanitation,1716,1702,2.0,5.792,58.714,0.5306,,,1.5417
+2023-09-01,2023,9,Sanitation Code Violation,Streets and Sanitation,1241,1240,1.0,5.0341,43.9347,0.5669,,,1.115
+2023-10-01,2023,10,Sanitation Code Violation,Streets and Sanitation,980,974,4.0,2.9519,25.271,0.6448,,,0.8805
+2023-11-01,2023,11,Sanitation Code Violation,Streets and Sanitation,761,755,0.0,3.227,19.836,0.6649,,,0.6837
+2023-12-01,2023,12,Sanitation Code Violation,Streets and Sanitation,758,755,0.0,3.181,14.3054,0.7523,,,0.681
+2024-01-01,2024,1,Sanitation Code Violation,Streets and Sanitation,830,825,1.0,1.9907,10.0744,0.8509,2.0261,-0.0354,0.7457
+2024-02-01,2024,2,Sanitation Code Violation,Streets and Sanitation,911,903,5.0,2.2795,16.1844,0.7807,2.8539,-0.5744,0.8185
+2024-03-01,2024,3,Sanitation Code Violation,Streets and Sanitation,898,892,1.0,2.864,21.7488,0.7209,3.1818,-0.3178,0.8068
+2024-04-01,2024,4,Sanitation Code Violation,Streets and Sanitation,1018,1014,1.0,2.8553,27.8086,0.7426,4.5677,-1.7124,0.9146
+2024-05-01,2024,5,Sanitation Code Violation,Streets and Sanitation,1626,1621,0.0,4.7872,41.9906,0.6052,4.5854,0.2018,1.4609
+2024-06-01,2024,6,Sanitation Code Violation,Streets and Sanitation,1489,1482,0.0,4.1591,59.738,0.5904,4.6135,-0.4544,1.3378
+2024-07-01,2024,7,Sanitation Code Violation,Streets and Sanitation,1607,1601,1.0,6.0452,54.595,0.5228,4.3585,1.6867,1.4438
+2024-08-01,2024,8,Sanitation Code Violation,Streets and Sanitation,1516,1515,0.0,5.823,48.1826,0.5406,5.792,0.031,1.362
+2024-09-01,2024,9,Sanitation Code Violation,Streets and Sanitation,1286,1284,1.0,4.1218,31.8368,0.6184,5.0341,-0.9122,1.1554
+2024-10-01,2024,10,Sanitation Code Violation,Streets and Sanitation,977,974,2.0,3.3213,25.6901,0.6571,2.9519,0.3694,0.8778
+2024-11-01,2024,11,Sanitation Code Violation,Streets and Sanitation,645,636,2.0,3.7277,21.3521,0.6808,3.227,0.5007,0.5795
+2024-12-01,2024,12,Sanitation Code Violation,Streets and Sanitation,799,798,1.0,2.8771,33.9406,0.6955,3.181,-0.3039,0.7179
+2023-01-01,2023,1,Street Light Out Complaint,Department of Transportation,3376,3358,15.0,2.7777,17.1897,0.7719,,,1.0542
+2023-02-01,2023,2,Street Light Out Complaint,Department of Transportation,3979,3953,24.0,3.102,27.173,0.7116,,,1.2425
+2023-03-01,2023,3,Street Light Out Complaint,Department of Transportation,3118,3101,14.0,3.1423,16.9101,0.7843,,,0.9736
+2023-04-01,2023,4,Street Light Out Complaint,Department of Transportation,2835,2826,8.0,2.8596,13.4708,0.8033,,,0.8852
+2023-05-01,2023,5,Street Light Out Complaint,Department of Transportation,2875,2857,18.0,2.3536,17.1856,0.804,,,0.8977
+2023-06-01,2023,6,Street Light Out Complaint,Department of Transportation,2945,2935,9.0,3.3955,23.6027,0.7414,,,0.9196
+2023-07-01,2023,7,Street Light Out Complaint,Department of Transportation,3661,3646,13.0,3.0125,17.0152,0.7894,,,1.1432
+2023-08-01,2023,8,Street Light Out Complaint,Department of Transportation,3689,3675,14.0,3.0864,22.8661,0.7415,,,1.1519
+2023-09-01,2023,9,Street Light Out Complaint,Department of Transportation,2839,2820,19.0,2.6746,13.5048,0.8071,,,0.8865
+2023-10-01,2023,10,Street Light Out Complaint,Department of Transportation,3227,3207,18.0,1.8802,9.5536,0.8625,,,1.0076
+2023-11-01,2023,11,Street Light Out Complaint,Department of Transportation,2890,2864,26.0,2.4424,11.2295,0.8383,,,0.9024
+2023-12-01,2023,12,Street Light Out Complaint,Department of Transportation,2256,2237,15.0,2.0149,11.2479,0.8538,,,0.7044
+2024-01-01,2024,1,Street Light Out Complaint,Department of Transportation,3055,3034,19.0,2.1003,11.1676,0.8319,2.7777,-0.6774,0.9539
+2024-02-01,2024,2,Street Light Out Complaint,Department of Transportation,2826,2801,21.0,2.7408,14.6353,0.8179,3.102,-0.3612,0.8824
+2024-03-01,2024,3,Street Light Out Complaint,Department of Transportation,2979,2966,12.0,2.037,9.3682,0.8581,3.1423,-1.1053,0.9302
+2024-04-01,2024,4,Street Light Out Complaint,Department of Transportation,2978,2950,24.0,2.2535,10.9684,0.8393,2.8596,-0.6061,0.9299
+2024-05-01,2024,5,Street Light Out Complaint,Department of Transportation,3654,3623,31.0,2.6404,12.8103,0.822,2.3536,0.2868,1.141
+2024-06-01,2024,6,Street Light Out Complaint,Department of Transportation,3838,3821,17.0,2.6562,17.47,0.7875,3.3955,-0.7392,1.1984
+2024-07-01,2024,7,Street Light Out Complaint,Department of Transportation,4155,4132,23.0,3.4549,25.877,0.7362,3.0125,0.4423,1.2974
+2024-08-01,2024,8,Street Light Out Complaint,Department of Transportation,3051,3041,10.0,3.6406,28.6038,0.7129,3.0864,0.5542,0.9527
+2024-09-01,2024,9,Street Light Out Complaint,Department of Transportation,3366,3334,28.0,3.0037,16.4317,0.7738,2.6746,0.3291,1.051
+2024-10-01,2024,10,Street Light Out Complaint,Department of Transportation,3189,3147,40.0,2.4562,9.8049,0.8532,1.8802,0.576,0.9958
+2024-11-01,2024,11,Street Light Out Complaint,Department of Transportation,3509,3468,33.0,2.6667,12.4692,0.8296,2.4424,0.2244,1.0957
+2024-12-01,2024,12,Street Light Out Complaint,Department of Transportation,2571,2549,21.0,2.568,11.7273,0.8188,2.0149,0.5531,0.8028
+2023-01-01,2023,1,Tree Debris Clean-Up Request,Streets and Sanitation,587,586,0.0,4.905,29.2347,0.6246,,,0.2477
+2023-02-01,2023,2,Tree Debris Clean-Up Request,Streets and Sanitation,731,728,0.0,4.9585,14.9813,0.6607,,,0.3085
+2023-03-01,2023,3,Tree Debris Clean-Up Request,Streets and Sanitation,763,740,0.0,4.833,18.1709,0.6351,,,0.322
+2023-04-01,2023,4,Tree Debris Clean-Up Request,Streets and Sanitation,1718,1679,0.0,1.243,6.2502,0.9172,,,0.725
+2023-05-01,2023,5,Tree Debris Clean-Up Request,Streets and Sanitation,1593,1577,0.0,1.9745,8.7594,0.8573,,,0.6722
+2023-06-01,2023,6,Tree Debris Clean-Up Request,Streets and Sanitation,2719,2622,0.0,2.9463,12.0628,0.7548,,,1.1474
+2023-07-01,2023,7,Tree Debris Clean-Up Request,Streets and Sanitation,4845,4369,0.0,2.9521,10.3087,0.7913,,,2.0445
+2023-08-01,2023,8,Tree Debris Clean-Up Request,Streets and Sanitation,3806,3465,0.0,2.9489,19.9708,0.7313,,,1.6061
+2023-09-01,2023,9,Tree Debris Clean-Up Request,Streets and Sanitation,2460,2228,1.0,4.0346,22.5257,0.6441,,,1.0381
+2023-10-01,2023,10,Tree Debris Clean-Up Request,Streets and Sanitation,2086,1926,2.0,2.1339,12.1662,0.8048,,,0.8803
+2023-11-01,2023,11,Tree Debris Clean-Up Request,Streets and Sanitation,1005,994,0.0,1.6037,5.8916,0.9376,,,0.4241
+2023-12-01,2023,12,Tree Debris Clean-Up Request,Streets and Sanitation,610,605,0.0,1.8992,7.2139,0.8876,,,0.2574
+2024-01-01,2024,1,Tree Debris Clean-Up Request,Streets and Sanitation,678,640,0.0,2.2694,11.1221,0.8078,4.905,-2.6356,0.2861
+2024-02-01,2024,2,Tree Debris Clean-Up Request,Streets and Sanitation,962,937,0.0,2.1364,15.1278,0.8196,4.9585,-2.8221,0.4059
+2024-03-01,2024,3,Tree Debris Clean-Up Request,Streets and Sanitation,1334,1254,0.0,5.0673,42.3825,0.5558,4.833,0.2343,0.5629
+2024-04-01,2024,4,Tree Debris Clean-Up Request,Streets and Sanitation,1824,1590,0.0,7.115,22.0176,0.4931,1.243,5.8719,0.7697
+2024-05-01,2024,5,Tree Debris Clean-Up Request,Streets and Sanitation,4843,4049,1.0,3.1888,9.2213,0.7886,1.9745,1.2144,2.0437
+2024-06-01,2024,6,Tree Debris Clean-Up Request,Streets and Sanitation,4354,3669,1.0,9.1295,29.1336,0.4394,2.9463,6.1832,1.8373
+2024-07-01,2024,7,Tree Debris Clean-Up Request,Streets and Sanitation,9708,7539,2.0,5.1275,20.1352,0.6298,2.9521,2.1755,4.0966
+2024-08-01,2024,8,Tree Debris Clean-Up Request,Streets and Sanitation,3787,3274,0.0,13.8647,78.1124,0.3626,2.9489,10.9158,1.5981
+2024-09-01,2024,9,Tree Debris Clean-Up Request,Streets and Sanitation,2611,2148,0.0,33.8835,54.0691,0.1285,4.0346,29.8488,1.1018
+2024-10-01,2024,10,Tree Debris Clean-Up Request,Streets and Sanitation,2226,1849,0.0,9.1594,24.0693,0.4067,2.1339,7.0255,0.9393
+2024-11-01,2024,11,Tree Debris Clean-Up Request,Streets and Sanitation,1112,1054,0.0,3.1728,10.695,0.7837,1.6037,1.5691,0.4692
+2024-12-01,2024,12,Tree Debris Clean-Up Request,Streets and Sanitation,512,497,0.0,2.0544,6.1498,0.9235,1.8992,0.1552,0.2161

@@ -1,0 +1,205 @@
+version: 2
+
+models:
+  - name: int_service_requests
+    description: >
+      Request-level fact table. One row per sr_number after deduplication, with
+      status and department normalised, closure duration computed, and one
+      boolean per data-quality defect so the defects can be counted anywhere
+      downstream. Incremental on last_modified_at, see the comment at the top of
+      the model for why.
+    columns:
+      - name: sr_number
+        description: City-assigned request id. Unique in this model, which is the point of the dedup step.
+        tests:
+          - not_null
+          - unique
+      - name: service_type
+        description: Long request type name, unchanged from source.
+        tests:
+          - not_null
+      - name: service_type_key
+        description: Uppercased punctuation-free form of service_type, produced by the normalize_label macro.
+        tests:
+          - not_null
+      - name: service_code
+        description: Short internal code for the request type.
+      - name: department
+        description: Owning department with the acronym prefix stripped, for example "Department of Transportation".
+        tests:
+          - not_null
+      - name: status
+        description: Normalised lifecycle status. "Completed" absorbs the raw "Closed" spelling.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["Completed", "Open", "Canceled", "Unknown"]
+      - name: status_raw
+        description: Status exactly as published, kept so the normalisation can be audited.
+      - name: origin
+        description: Intake channel.
+      - name: ward
+        description: Cleaned ward number. NULL when the source ward was blank or outside 1-50.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_wards')
+                field: ward
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 50
+                inclusive: true
+      - name: ward_raw
+        description: Ward string as published.
+      - name: community_area
+        description: Community area number, 1-77.
+      - name: police_district
+        description: Police district of the service address.
+      - name: zip_code
+        description: Five digit ZIP of the service address.
+      - name: latitude
+        description: Latitude, WGS84.
+      - name: longitude
+        description: Longitude, WGS84.
+      - name: created_at
+        description: Timestamp the request was opened.
+        tests:
+          - not_null
+      - name: created_date
+        description: Date part of created_at.
+        tests:
+          - not_null
+      - name: created_month
+        description: created_at truncated to the first of the month. Grain for all time series in the marts.
+        tests:
+          - not_null
+      - name: created_year
+        description: Calendar year the request was opened. Either 2023 or 2024 by construction.
+        tests:
+          - accepted_values:
+              arguments:
+                values: [2023, 2024]
+                quote: false
+      - name: created_day_of_week
+        description: Day of week of created_at, 0 = Sunday.
+      - name: last_modified_at
+        description: Last time the City touched the record. Drives the incremental filter.
+      - name: closed_at
+        description: Timestamp the request was closed, NULL if never closed.
+      - name: is_closed
+        description: True when status is Completed.
+        tests:
+          - not_null
+      - name: is_open
+        description: True when status is Open.
+        tests:
+          - not_null
+      - name: is_canceled
+        description: True when status is Canceled.
+        tests:
+          - not_null
+      - name: days_to_close_raw
+        description: >
+          Signed days between created_at and closed_at. Can be negative, which
+          is a real defect. Present only so the defect is auditable, never used
+          in a mart.
+      - name: days_to_close
+        description: >
+          Analysis-ready closure duration in days. Populated only when the
+          request is Completed and closed_at is not earlier than created_at.
+          This is the column every mart measures.
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: true
+      - name: days_open
+        description: Age in days of a still-open request as of the window end date. NULL for anything not Open.
+      - name: is_stale_open
+        description: True for requests still Open more than stale_open_days after creation. NULL for anything not Open.
+      - name: has_backwards_timestamps
+        description: True when closed_at is earlier than created_at. Defect 4.
+        tests:
+          - not_null
+      - name: is_closed_without_timestamp
+        description: True when status is Completed but closed_at is NULL. Defect 7.
+        tests:
+          - not_null
+      - name: has_unknown_ward
+        description: True when the ward could not be resolved to 1-50. Defect 3.
+        tests:
+          - not_null
+      - name: has_no_geocode
+        description: True when latitude or longitude is missing. Defect 8.
+        tests:
+          - not_null
+      - name: is_flagged_duplicate
+        description: The City's own duplicate flag.
+      - name: is_legacy_record
+        description: True for records migrated from the pre-2018 system.
+      - name: parent_sr_number
+        description: Surviving request id when this request was merged into another.
+      - name: source_file
+        description: Raw CSV page this row came from.
+
+  - name: int_ward_monthly_load
+    description: >
+      Ward by month workload and closure-speed panel, 50 wards x 24 months.
+      This is the table the volume hypothesis is tested on.
+    columns:
+      - name: ward
+        description: Ward number, 1-50.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_wards')
+                field: ward
+      - name: ward_name
+        description: Display label for the ward.
+        tests:
+          - not_null
+      - name: city_side
+        description: North, South or West.
+        tests:
+          - not_null
+      - name: created_month
+        description: Month the requests were opened in.
+        tests:
+          - not_null
+      - name: requests_opened
+        description: Count of requests opened in the ward that month.
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                inclusive: true
+      - name: requests_closed_cleanly
+        description: Of those, how many have a usable closure duration.
+        tests:
+          - not_null
+      - name: median_days_to_close
+        description: Median days_to_close for requests opened that month. NULL if none closed cleanly.
+      - name: mean_days_to_close
+        description: Mean days_to_close for requests opened that month.
+      - name: p90_days_to_close
+        description: 90th percentile closure time, which is what a resident in the tail actually experiences.
+      - name: still_open
+        description: Count of requests from that month still Open.
+        tests:
+          - not_null
+      - name: ward_avg_monthly_requests
+        description: The ward's own mean monthly request count across the window.
+        tests:
+          - not_null
+      - name: load_index
+        description: >
+          requests_opened divided by the ward's own average month. 1.0 is a
+          typical month for that ward, 1.5 is a 50% heavier month. Normalising
+          within ward is what separates a load spike from a ward simply being
+          big.
+        tests:
+          - not_null

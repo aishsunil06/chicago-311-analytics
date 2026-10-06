@@ -1,0 +1,35 @@
+# Raw API pages. 187 MB across 24 files, fully reproducible with
+# scripts/extract.py. A 2,400 row slice is committed at data/sample/ instead.
+data/raw/
+
+# The warehouse itself. Rebuilt by run.sh in about 30 seconds once the raw
+# pages are on disk.
+*.duckdb
+*.duckdb.wal
+
+# dbt build artifacts. target/ is ignored EXCEPT the generated docs catalog,
+# which is committed on purpose so the lineage graph is browsable from GitHub
+# without installing dbt. See the negations below.
+# Anonymous install id dbt writes on first run. Machine-specific.
+dbt/.user.yml
+dbt/dbt_packages/
+dbt/logs/
+dbt/target/*
+!dbt/target/manifest.json
+!dbt/target/catalog.json
+!dbt/target/index.html
+!dbt/target/run_results.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

@@ -1,0 +1,10 @@
+Service Type,Department,Requests Total,Requests Measurable,Requests Open,Requests Stale Open,Closure Rate,Median Days to Close,Mean Days to Close,P90 Days to Close,Share Closed under 1 Minute,Wards Reported,Ward P10 Median Days,Ward P90 Median Days,Ward Fastest Median Days,Ward Slowest Median Days,Ward Inequity Ratio,Correlation Volume vs Delay,Slowest Ward,Slowest Ward Median Days,Fastest Ward,Fastest Ward Median Days
+Graffiti Removal Request,Streets and Sanitation,185201,183770,215.0,28.0,0.9923,0.7463,1.5028,2.8315,0.3288,50,0.246,0.9474,0.0001,1.0659,3.851,-0.1913,46,1.0659,19,0.0001
+Dead Animal Pick-Up Request,Streets and Sanitation,30792,30792,0.0,0.0,1.0,1.2494,1.7176,3.1639,0.0026,47,1.1385,1.67,1.0958,1.8859,1.4668,-0.0438,48,1.8859,37,1.0958
+Street Light Out Complaint,Department of Transportation,76861,76345,472.0,193.0,0.9933,2.6953,12.7028,15.851,0.026,50,2.3675,3.3595,1.9818,4.1558,1.419,-0.0101,43,4.1558,40,1.9818
+Sanitation Code Violation,Streets and Sanitation,26713,26604,30.0,15.0,0.9959,3.7977,13.1309,38.7738,0.001,48,1.0143,22.0738,0.44,42.0975,21.7636,0.3041,24,42.0975,2,0.44
+Tree Debris Clean-Up Request,Streets and Sanitation,56874,50019,7.0,3.0,0.8795,4.0831,10.0531,26.6741,0.0067,46,2.0423,6.8559,1.7231,7.9186,3.357,0.5244,16,7.9186,11,1.7231
+Fly Dumping Complaint,Streets and Sanitation,24357,24297,22.0,7.0,0.9975,4.7607,14.5383,42.8624,0.0,41,0.8988,21.8544,0.7956,33.5489,24.3165,0.6599,27,33.5489,39,0.7956
+Rodent Baiting/Rat Complaint,Streets and Sanitation,94379,94376,3.0,3.0,1.0,4.9334,7.5676,19.8979,0.001,50,4.0297,5.6639,1.8205,6.2064,1.4055,0.4534,19,6.2064,34,1.8205
+Pothole in Street Complaint,Department of Transportation,100309,100151,74.0,6.0,0.9984,6.0066,29.2084,90.974,0.1272,50,2.232,17.1358,0.9709,20.8603,7.6774,0.102,36,20.8603,42,0.9709
+Abandoned Vehicle Complaint,Streets and Sanitation,94941,94085,396.0,149.0,0.991,9.893,13.6199,29.699,0.0008,50,7.8689,13.0632,0.932,21.8027,1.6601,-0.3218,44,21.8027,42,0.932
